@@ -1,0 +1,18 @@
+<div class="max-w-7xl mx-auto">
+  <div class="p-4 flex justify-between">
+    <a [routerLink]="['/']">
+      <img src="assets/images/logo.png" class="w-[150px]">
+    </a>
+
+
+    @if (userService.currentUser() === undefined) {
+      <app-logged-out-functionality></app-logged-out-functionality>
+    } @else {
+      <app-logged-in-functionality [user]="userService.currentUser()!"></app-logged-in-functionality>
+    }
+
+
+
+
+  </div>
+</div>
